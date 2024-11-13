@@ -1,0 +1,39 @@
+@model IEnumerable<SistemaEscolar.Models.Alumno>
+@{
+    ViewData["Title"] = "Listado de Alumnos";
+}
+
+<h2>Listado de Alumnos</h2>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Agregar Alumno</a>
+</p>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th>Dirección</th>
+            <th>Cédula</th>
+            <th>Correo</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+    @foreach (var alumno in Model) 
+    {
+        <tr>
+            <td>@alumno.NombreAlumno</td>
+            <td>@alumno.Direccion</td>
+            <td>@alumno.Cedula</td>
+            <td>@alumno.Correo</td>
+            <td>
+                <a asp-action="Details" asp-route-id="@alumno.AlumnoId" class="btn btn-info">Detalles</a>
+                <a asp-action="Edit" asp-route-id="@alumno.AlumnoId" class="btn btn-warning">Editar</a>
+                <a asp-action="Delete" asp-route-id="@alumno.AlumnoId" class="btn btn-danger">Eliminar</a>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+

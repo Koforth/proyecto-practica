@@ -1,0 +1,19 @@
+@model SistemaEscolar.Models.Alumno
+@{
+    ViewData["Title"] = "Eliminar Alumno";
+}
+
+<h2>Eliminar Alumno</h2>
+
+<div>
+    <h4>@Model.NombreAlumno</h4>
+    <hr />
+    <p>¿Está seguro de que desea eliminar este alumno?</p>
+</div>
+
+<form asp-action="DeleteConfirmed" method="post">
+    <input type="hidden" asp-for="AlumnoId" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
+

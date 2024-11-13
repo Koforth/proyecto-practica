@@ -1,0 +1,45 @@
+﻿@model SistemaEscolar.ViewModels.HomeViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página de Inicio - Sistema Escolar</title>
+</head>
+<body>
+    <h1>Bienvenido al Sistema Escolar</h1>
+    <h2>Resumen</h2>
+
+    <section>
+        <h3>Últimas Actividades</h3>
+        <ul>
+            @foreach (var actividad in Model.Actividades)
+            {
+                <li>@actividad.Nombre - @actividad.Fecha</li>
+            }
+        </ul>
+    </section>
+
+    <section>
+        <h3>Alumnos Registrados</h3>
+        <ul>
+            @foreach (var alumno in Model.Alumnos)
+            {
+                <li>@alumno.Nombre @alumno.Apellido - @alumno.Grado</li>
+            }
+        </ul>
+    </section>
+
+    <section>
+        <h3>Usuarios Activos</h3>
+        <ul>
+            @foreach (var usuario in Model.Usuarios)
+            {
+                <li>@usuario.NombreUsuario - @usuario.Rol</li>
+            }
+        </ul>
+    </section>
+</body>
+</html>
+
